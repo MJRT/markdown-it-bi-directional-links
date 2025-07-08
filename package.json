@@ -1,0 +1,49 @@
+{
+  "name": "@mjrt/markdown-it-bi-directional-links",
+  "type": "module",
+  "version": "0.0.1",
+  "description": "A markdown-it plugin that adds bi-directional links.",
+  "author": {
+    "name": "mjrt",
+    "email": "mjrt.dev@outlook.com",
+    "url": "https://github.com/mjrt"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/mjrt/markdown-it-bi-directional-links",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mjrt/markdown-it-bi-directional-links.git"
+  },
+  "keywords": [
+    "bi-directional-links",
+    "markdown",
+    "markdown-it",
+    "markdown-it-plugin"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "test": "jest",
+    "build": "tsc",
+    "typecheck": "tsc --noEmit"
+  },
+  "packageManager": "pnpm@10.12.4",
+  "peerDependencies": {
+    "markdown-it": ">=14.1.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^30.0.0",
+    "@types/markdown-it": "^14.1.2",
+    "jest": "^30.0.4",
+    "ts-jest": "^29.4.0"
+  }
+}
