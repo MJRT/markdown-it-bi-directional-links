@@ -39,6 +39,7 @@ jobs:
         run: pnpm test --coverage
 
       - run: pnpm build
+      - run: cp package.json dist/
 
       - name: Release
         env:
