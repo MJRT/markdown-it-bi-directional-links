@@ -1,7 +1,7 @@
 {
   "name": "markdown-it-bi-directional-links",
   "type": "module",
-  "version": "0.0.1",
+  "version": "1.0.1",
   "description": "A markdown-it plugin that adds bi-directional links.",
   "author": {
     "name": "mjrt",

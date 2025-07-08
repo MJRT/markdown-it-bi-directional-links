@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/mjrt/markdown-it-bi-directional-links/compare/v1.0.0...v1.0.1) (2025-07-08)
+
+
+### Bug Fixes
+
+* push all code instead of only dist ([a32067d](https://github.com/mjrt/markdown-it-bi-directional-links/commit/a32067d66d274bd7cfa690f0794a40b610a8fdc8))
+
 # 1.0.0 (2025-07-08)
 
 
