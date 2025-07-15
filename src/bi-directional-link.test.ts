@@ -1,8 +1,8 @@
 import MarkdownIt from 'markdown-it';
-import { BiDirectionalLinks } from '../src/index';
+import { BiDirectionalLink } from './bi-directional-link';
 
-describe('BiDirectionalLinks Plugin', () => {
-  const md = MarkdownIt().use(BiDirectionalLinks({
+describe('BiDirectionalLink Plugin', () => {
+  const md = MarkdownIt().use(BiDirectionalLink({
     url: 'https://example.com/wiki/%s',
     className: 'wikilink',
     render_open: '<custom>',
@@ -30,7 +30,7 @@ describe('BiDirectionalLinks Plugin', () => {
   });
 
   test('uses default render if no custom provided', () => {
-    const defaultMd = MarkdownIt().use(BiDirectionalLinks({}));
+    const defaultMd = MarkdownIt().use(BiDirectionalLink({}));
     const result = defaultMd.render('Check [[Google]].');
   
     expect(result.trim()).toBe(
@@ -39,7 +39,7 @@ describe('BiDirectionalLinks Plugin', () => {
   });
 
   test('uses default renderer with custom url and className only', () => {
-    const partialMd = MarkdownIt().use(BiDirectionalLinks({
+    const partialMd = MarkdownIt().use(BiDirectionalLink({
       url: 'https://mywiki.org/page/%s',
       className: 'custom-wiki-class',
     }));
