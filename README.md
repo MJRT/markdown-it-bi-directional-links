@@ -14,11 +14,12 @@ This plugin extends markdown-it to recognize and render bi-directional link synt
 
 ## 🔍 Supported Syntax
 
-| Syntax                   | Description                     | Status     |
-| ------------------------ | ------------------------------- | ---------- |
-| `[[content]]`            | Popular wiki-style link         | ✅ Done    |
-| `![[content]]`           | Obsidian-style embedded content | ⏳ Planned |
-| `#content, #[[content]]` | Logseq-style tag                | ⏳ Planned |
+| Syntax                                    | Description                     | Status     |
+| ----------------------------------------- | ------------------------------- | ---------- |
+| `[[content]]`                             | Popular wiki-style link         | ✅ Done    |
+| `![[content]]`                            | Obsidian-style embedded content | ⏳ Planned |
+| `#content, #[[content]]`                  | Logseq-style tagged link        | ✅ Done    |
+| `[[content\|alias]], #[[content\|alias]]` | Display alias text              | ✅ Done    |
 
 ## 📦 Installation
 
@@ -30,7 +31,7 @@ pnpm install markdown-it-bi-directional-links
 
 - ✅ The plugin is ready to use out of the box after installation.
 
-- 🔍 Default behavior: All links ([[content]], etc.) are rendered as Google search links.
+- 🔍 By default, all links (e.g., [[content]]) are displayed as local links, such as `/notes/content`. 
 
 - 🛠️ Recommended: You should override the default renderer to generate internal links, route paths, or custom HTML/Component depending on your application.
 

@@ -34,7 +34,7 @@ describe('BiDirectionalLink Plugin', () => {
     const result = defaultMd.render('Check [[Google]].');
   
     expect(result.trim()).toBe(
-      '<p>Check <a href="https://www.google.com/search?q=Google" class="bi-directional-link">Google</a>.</p>'
+      '<p>Check <a href="/notes/Google" class="bi-directional-link">Google</a>.</p>'
     );
   });
 

@@ -1,2 +1,2 @@
 export * from './bi-directional-link';
-// export * from './embed-link';
+export * from './tagged-link';

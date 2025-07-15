@@ -2,6 +2,7 @@ import type { PluginSimple } from 'markdown-it';
 import type MarkdownIt from 'markdown-it';
 import type StateInline from 'markdown-it/lib/rules_inline/state_inline.d.mts';
 import type Token from 'markdown-it/lib/token.mjs';
+import { convertRuleNameToClassName } from './utils';
 
 const BI_DIRECTIONAL_LINK_PATTERN = /\[\[([^|\]\n]+)(?:\|([^\]\n]+))?\]\]/y;
 const RULE_NAME = 'bi_directional_link';
@@ -16,8 +17,8 @@ export interface BiDirectionalLinkOptions {
 }
 
 export const BiDirectionalLink: (options: BiDirectionalLinkOptions) => PluginSimple = ({
-  url = 'https://www.google.com/search?q=%s',
-  className = 'bi-directional-link',
+  url = '/notes/%s',
+  className = convertRuleNameToClassName(RULE_NAME),
   render_open,
   render_close,
 }) => {
