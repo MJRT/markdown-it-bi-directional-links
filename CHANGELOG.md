@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/mjrt/markdown-it-bi-directional-links/compare/v1.0.1...v1.1.0) (2025-07-15)
+
+
+### Features
+
+* add tagged link; change default link to '/notes/%s' ([b3cbc1e](https://github.com/mjrt/markdown-it-bi-directional-links/commit/b3cbc1efb0176016064cdb083f5d9f931d2c95bf))
+
 ## [1.0.1](https://github.com/mjrt/markdown-it-bi-directional-links/compare/v1.0.0...v1.0.1) (2025-07-08)
 
 
