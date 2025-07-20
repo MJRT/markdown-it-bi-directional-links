@@ -62,7 +62,7 @@ describe("TaggedLink Plugin", () => {
     const result = defaultMd.render("Check #[[Google]].");
 
     expect(result.trim()).toEqual(
-      '<p>Check <a href="/notes/Google" class="tagged-link">Google</a>.</p>'
+      '<p>Check <a href="/notes/Google" class="md-tagged-link">Google</a>.</p>'
     );
   });
 
@@ -86,9 +86,7 @@ describe("TaggedLink Plugin", () => {
   });
 
   test("does parse # with special chars", () => {
-    const specials = [
-      { char: ".", html: "." },
-    ];
+    const specials = [{ char: ".", html: "." }];
     specials.forEach(({ char, html }) => {
       const result = md.render(`This is a #${char}word.`);
       expect(result.trim()).toEqual(

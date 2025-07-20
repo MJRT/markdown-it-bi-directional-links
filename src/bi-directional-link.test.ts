@@ -65,7 +65,7 @@ describe("BiDirectionalLink Plugin", () => {
     const result = defaultMd.render("Check [[Google]].");
 
     expect(result.trim()).toEqual(
-      '<p>Check <a href="/notes/Google" class="bi-directional-link">Google</a>.</p>'
+      '<p>Check <a href="/notes/Google" class="md-bi-directional-link">Google</a>.</p>'
     );
   });
 

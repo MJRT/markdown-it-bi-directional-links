@@ -14,12 +14,15 @@ This plugin extends markdown-it to recognize and render bi-directional link synt
 
 ## 🔍 Supported Syntax
 
-| Syntax                                    | Description                     | Status     |
-| ----------------------------------------- | ------------------------------- | ---------- |
-| `[[content]]`                             | Popular wiki-style link         | ✅ Done    |
-| `![[content]]`                            | Obsidian-style embedded content | ⏳ Planned |
-| `#content, #[[content]]`                  | Logseq-style tagged link        | ✅ Done    |
-| `[[content\|alias]], #[[content\|alias]]` | Display alias text              | ✅ Done    |
+| Syntax                                                            | Description                     | Status     |
+| ----------------------------------------------------------------- | ------------------------------- | ---------- |
+| `[[content]]`                                                     | Popular wiki-style link         | ✅ Done    |
+| `#content, #[[content]]`                                          | Logseq-style tagged link        | ✅ Done    |
+| `[[content\|alias]], #[[content\|alias]], ![[content\|alias]]`    | Display alias text              | ✅ Done    |
+| `![[content]]`                                                    | Obsidian-style embedded content | 🚧 Doing   |
+
+> `![[content]]` is currently recognized but lacks a dedicated rendering module. Its default behavior is the same as `[[content]]`. You can specify a custom module via parameters.
+
 
 ## 📦 Installation
 
