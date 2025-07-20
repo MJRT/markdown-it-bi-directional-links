@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/mjrt/markdown-it-bi-directional-links/compare/v1.2.0...v1.2.1) (2025-07-20)
+
+
+### Bug Fixes
+
+* add embedded link export ([f803e93](https://github.com/mjrt/markdown-it-bi-directional-links/commit/f803e93779d3281ec0d53c24076daeac6fa76d67))
+
 # [1.2.0](https://github.com/mjrt/markdown-it-bi-directional-links/compare/v1.1.0...v1.2.0) (2025-07-20)
 
 
