@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/mjrt/markdown-it-bi-directional-links/compare/v1.1.0...v1.2.0) (2025-07-20)
+
+
+### Features
+
+* add embedded link recognizer ([8bdea10](https://github.com/mjrt/markdown-it-bi-directional-links/commit/8bdea1039c9641d9b878918f9ebd087ab1f7ad4f))
+
 # [1.1.0](https://github.com/mjrt/markdown-it-bi-directional-links/compare/v1.0.1...v1.1.0) (2025-07-15)
 
 
