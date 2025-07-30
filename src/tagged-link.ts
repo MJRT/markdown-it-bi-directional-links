@@ -3,11 +3,10 @@ import type MarkdownIt from "markdown-it";
 import type StateInline from "markdown-it/lib/rules_inline/state_inline.d.mts";
 import type Token from "markdown-it/lib/token.mjs";
 import { convertRuleNameToClassName, pushTokenToState } from "./utils";
+import { TAGGED_LINK_PATTERN, TAGGED_LINK_RULE_NAME } from "./constants";
 
-export const TAGGED_LINK_PATTERN = /#(?:\[\[([^|\]\n]+)(?:\|([^\]\n]+))?\]\]|([^\s#<>\[\]|{}`'"\\]+)(?=\s|$))/y;
-const RULE_NAME = "tagged_link";
-const RENDER_OPEN_NAME = `${RULE_NAME}_open`;
-const RENDER_CLOSE_NAME = `${RULE_NAME}_close`;
+const RENDER_OPEN_NAME = `${TAGGED_LINK_RULE_NAME}_open`;
+const RENDER_CLOSE_NAME = `${TAGGED_LINK_RULE_NAME}_close`;
 
 export interface TaggedLinkOptions {
   url?: string;
@@ -18,12 +17,12 @@ export interface TaggedLinkOptions {
 
 export const TaggedLink: (options: TaggedLinkOptions) => PluginSimple = ({
   url = "/notes/%s",
-  className = convertRuleNameToClassName(RULE_NAME),
+  className = convertRuleNameToClassName(TAGGED_LINK_RULE_NAME),
   render_open,
   render_close,
 }) => {
   return (md) => {
-    md.inline.ruler.after("text", RULE_NAME, (state) => {
+    md.inline.ruler.after("text", TAGGED_LINK_RULE_NAME, (state) => {
       TAGGED_LINK_PATTERN.lastIndex = state.pos;
       const matched = TAGGED_LINK_PATTERN.exec(state.src);
 
