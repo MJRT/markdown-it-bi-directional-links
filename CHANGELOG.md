@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/mjrt/markdown-it-bi-directional-links/compare/v1.2.1...v1.3.0) (2025-07-30)
+
+
+### Features
+
+* export regular expressions and rules name ([d98e79d](https://github.com/mjrt/markdown-it-bi-directional-links/commit/d98e79d42588e06acb1a61cf050a20711919c713))
+
 ## [1.2.1](https://github.com/mjrt/markdown-it-bi-directional-links/compare/v1.2.0...v1.2.1) (2025-07-20)
 
 
