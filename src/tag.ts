@@ -3,30 +3,30 @@ import type MarkdownIt from "markdown-it";
 import type StateInline from "markdown-it/lib/rules_inline/state_inline.d.mts";
 import type Token from "markdown-it/lib/token.mjs";
 import { convertRuleNameToClassName, pushTokenToState } from "./utils";
-import { TAGGED_LINK_PATTERN, TAGGED_LINK_RULE_NAME } from "./constants";
+import { TAG_PATTERN, TAG_RULE_NAME } from "./constants";
 
-const RENDER_OPEN_NAME = `${TAGGED_LINK_RULE_NAME}_open`;
-const RENDER_CLOSE_NAME = `${TAGGED_LINK_RULE_NAME}_close`;
+const RENDER_OPEN_NAME = `${TAG_RULE_NAME}_open`;
+const RENDER_CLOSE_NAME = `${TAG_RULE_NAME}_close`;
 
-export interface TaggedLinkOptions {
+export interface TagOptions {
   url?: string;
   className?: string;
   render_open?: string;
   render_close?: string;
 }
 
-export const TaggedLink: (options: TaggedLinkOptions) => PluginSimple = ({
+export const Tag: (options: TagOptions) => PluginSimple = ({
   url = "/notes/%s",
-  className = convertRuleNameToClassName(TAGGED_LINK_RULE_NAME),
+  className = convertRuleNameToClassName(TAG_RULE_NAME),
   render_open,
   render_close,
 }) => {
   return (md) => {
-    md.inline.ruler.after("text", TAGGED_LINK_RULE_NAME, (state) => {
-      TAGGED_LINK_PATTERN.lastIndex = state.pos;
-      const matched = TAGGED_LINK_PATTERN.exec(state.src);
+    md.inline.ruler.after("text", TAG_RULE_NAME, (state) => {
+      TAG_PATTERN.lastIndex = state.pos;
+      const matched = TAG_PATTERN.exec(state.src);
 
-      return matched ? genTaggedLinkTokens(state, md, matched) : false;
+      return matched ? genPlainTagTokens(state, md, matched) : false;
     });
 
     md.renderer.rules[RENDER_OPEN_NAME] = (tokens, idx) => {
@@ -45,19 +45,18 @@ export const TaggedLink: (options: TaggedLinkOptions) => PluginSimple = ({
   };
 };
 
-export function genTaggedLinkTokens(
+export function genPlainTagTokens(
   state: StateInline,
   md: MarkdownIt,
   match: RegExpMatchArray
 ) {
   const link = match[1]!;
-  const text = match[2];
 
   // add opening token
   state.push(RENDER_OPEN_NAME, "", 1).attrSet("title", `${link}`);
 
   // add self-closing token
-  const parsedTokens = md.parseInline(text || link, state.env) || [];
+  const parsedTokens = md.parseInline(link, state.env) || [];
 
   // this must use deep copy to update current state
   parsedTokens?.forEach((token: Token) => {
