@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/mjrt/markdown-it-bi-directional-links/compare/v1.3.0...v1.4.0) (2025-09-05)
+
+
+### Features
+
+* split tag and tagged link ([0a5c011](https://github.com/mjrt/markdown-it-bi-directional-links/commit/0a5c011b44ffcdaa3711ce9bb706ab3311105d21))
+
 # [1.3.0](https://github.com/mjrt/markdown-it-bi-directional-links/compare/v1.2.1...v1.3.0) (2025-07-30)
 
 
